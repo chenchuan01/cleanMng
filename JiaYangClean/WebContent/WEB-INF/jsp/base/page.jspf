@@ -3,5 +3,7 @@
 <div class="pageAre">
 	<p id="currentPage" style="display: none;"></p>
 	<p id="totalPages" style="display: none;"></p>
+	<center>
 	<ul id="pagesItems" class="pagination"style="margin: 0 auto;"></ul>
+	</center>
 </div>

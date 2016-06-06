@@ -15,8 +15,6 @@ import com.sys.base.dto.PageResult;
 import com.sys.base.dto.QueryParam;
 import com.sys.common.AppExpection;
 import com.sys.common.util.LogUtil;
-import com.sys.common.util.SessionUtil;
-import com.sys.db.entity.User;
 
 /**
  *ItemController.java
@@ -53,9 +51,12 @@ public class ItemController extends BaseController {
 	 */
 	@RequestMapping(value = "itemForm")
 	public String itemForm(Integer id, Model m) {
-		Item item = itemService.findById(id);
-		m.addAttribute("item", item);
-		return "custom/itemForm";
+		if(id!=null){
+			Item item = itemService.findById(id);
+			m.addAttribute("item", item);
+		}
+		
+		return "form/itemForm";
 	}
 	/**
 	 * 服务项目信息修改
@@ -65,13 +66,12 @@ public class ItemController extends BaseController {
 	 */
 	@RequestMapping(value = "itemModify")
 	public @ResponseBody Item itemModify(Item item, HttpSession session) {
-		User sysUser =SessionUtil.sysUser(session);
 		try {
 			if(item!=null&&item.getId()!=null){
 				itemService.updateEntity(item);
 				LogUtil.info(getClass(),"ItemController.itemModify(Item)", "服务项目信息修改");
 			}else{
-				itemService.saveEntity(item, sysUser);
+				itemService.saveEntity(item);
 				LogUtil.info(getClass(), "ItemController.itemModify(Item)", "服务项目信息新增");
 			}
 			

@@ -22,7 +22,7 @@ import com.sys.db.entity.User;
  *ToolController.java
  */
 @Controller
-@RequestMapping("/car")
+@RequestMapping("/tool")
 public class ToolController extends BaseController {
 	@Resource
 	ToolService toolService;
@@ -53,9 +53,11 @@ public class ToolController extends BaseController {
 	 */
 	@RequestMapping(value = "toolForm")
 	public String toolForm(Integer id, Model m) {
-		Tool tool = toolService.findById(id);
-		m.addAttribute("tool", tool);
-		return "custom/toolForm";
+		if(id!=null){
+			Tool tool = toolService.findById(id);
+			m.addAttribute("tool", tool);
+		}
+		return "form/toolForm";
 	}
 	/**
 	 * 保洁工具信息修改

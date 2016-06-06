@@ -74,5 +74,5 @@ function getUrl(formId){
 	return $('form[action]').first().attr('action');
 }
 var loadToggle=function(){
-	$('#load').toggle(50);
+	$('#load').toggle();
 };

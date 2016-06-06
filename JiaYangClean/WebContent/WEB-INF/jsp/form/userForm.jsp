@@ -4,7 +4,7 @@
 	<form id="userForm" class="form-horizontal" action="sys/userModify.do" method="post">
 		<div class="form-group">
 			<label  for="name">姓名</label>
-			<input id="name" class="form-control" type="text" name="name" value="${user.name }" placeholder="员工姓名" valid="required" />
+			<input id="name" class="form-control" type="text" name="name" value="${user.name }" placeholder="" valid="required" />
 		</div>
 		<div class="form-group">
 			<label  for="tel">联系电话</label>
@@ -24,7 +24,7 @@
 		<div class="form-group">
 			<label  for="password">密码</label>
 				<input type="password" id="password" class="form-control" name="password"
-					placeholder="用户登录密码" value="${user.password }" valid="required">
+					placeholder="" value="${user.password }" valid="required">
 		</div>
 		<div class="form-group">
 			<button type="button" class="btn btn-success form-control" onclick="valid('#userForm',save);">保存修改</button>

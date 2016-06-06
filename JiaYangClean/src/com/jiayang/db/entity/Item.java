@@ -7,7 +7,7 @@ import com.sys.base.BaseEntity;
  */
 public class Item extends BaseEntity{
 	private String name;
-	private String desc;
+	private String descs;
 	private String price;
 	private String remarks;
 	public String getName() {
@@ -16,11 +16,11 @@ public class Item extends BaseEntity{
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getDesc() {
-		return desc;
+	public String getDescs() {
+		return descs;
 	}
-	public void setDesc(String desc) {
-		this.desc = desc;
+	public void setDescs(String descs) {
+		this.descs = descs;
 	}
 	
 	public String getPrice() {

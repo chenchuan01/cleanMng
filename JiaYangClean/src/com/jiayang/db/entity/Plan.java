@@ -6,6 +6,7 @@ import com.sys.base.BaseEntity;
  *Tool.java
  */
 public class Plan extends BaseEntity{
+	private String recon;
 	private Integer userId;
 	private Integer cleanerId;
 	private Integer itemId;
@@ -13,6 +14,15 @@ public class Plan extends BaseEntity{
 	private Integer status;
 	private String address;
 	private String remarks;
+	
+	
+	
+	public String getRecon() {
+		return recon;
+	}
+	public void setRecon(String recon) {
+		this.recon = recon;
+	}
 	public Integer getUserId() {
 		return userId;
 	}

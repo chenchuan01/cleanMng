@@ -1,5 +1,8 @@
 /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
 /* custom css */
+.pageViewItem{
+	cursor: pointer;
+}
 #template{
 	display: none;
 }

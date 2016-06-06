@@ -64,13 +64,13 @@
 					<div class="sidebar-menu nav-collapse">
 						<!-- SIDEBAR MENU -->
 						<ul>
-							<li><a class="" onclick="pageView('${ctx}/home/planMng.do');"><i class="fa fa-check-square-o"></i><span class="menu-text">预约管理</span></a></li>
-							<li><a class="" onclick="pageView('${ctx}/home/userMng.do');"><i class="fa fa-users"></i> <span class="menu-text">用户管理</span></a></li>
-							<li><a class="" onclick="pageView('${ctx}/home/empMng.do');"><i class="fa fa-sitemap"></i> <span class="menu-text">员工管理</span></a></li>
-							<li><a class="" onclick="pageView('${ctx}/home/toolMng.do');"><i class="fa fa-wrench"></i> <span class="menu-text">工具管理</span></a></li>
-							<li><a class="" onclick="pageView('${ctx}/home/itemMng.do');"><i class="fa fa-th-large"></i> <span class="menu-text">服务管理</span></a></li>
-							<li><a class="" onclick="pageView('${ctx}/home/payMng.do');"><i class="fa fa-jpy"></i><span class="menu-text">工资结算 </span></a></li>
-							<li><a class="" onclick="pageView('${ctx}/home/configMng.do');"><i class="fa fa-gear"></i><span class="menu-text">系统配置 </span></a></li>
+							<li><a class="pageViewItem" onclick="pageView('${ctx}/home/planMng.do');"><i class="fa fa-check-square-o"></i><span class="menu-text">预约管理</span></a></li>
+							<li><a class="pageViewItem" onclick="pageView('${ctx}/home/userMng.do');"><i class="fa fa-users"></i> <span class="menu-text">用户管理</span></a></li>
+							<li><a class="pageViewItem" onclick="pageView('${ctx}/home/empMng.do');"><i class="fa fa-sitemap"></i> <span class="menu-text">员工管理</span></a></li>
+							<li><a class="pageViewItem" onclick="pageView('${ctx}/home/toolMng.do');"><i class="fa fa-wrench"></i> <span class="menu-text">工具管理</span></a></li>
+							<li><a class="pageViewItem" onclick="pageView('${ctx}/home/itemMng.do');"><i class="fa fa-th-large"></i> <span class="menu-text">服务管理</span></a></li>
+							<li><a class="pageViewItem" onclick="pageView('${ctx}/home/payMng.do');"><i class="fa fa-jpy"></i><span class="menu-text">工资结算 </span></a></li>
+							<li><a class="pageViewItem" onclick="pageView('${ctx}/home/configMng.do');"><i class="fa fa-gear"></i><span class="menu-text">系统配置 </span></a></li>
 						</ul>
 						<!-- /SIDEBAR MENU -->
 					</div>

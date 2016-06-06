@@ -11,9 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 	static final String VIEW_HOME="home";
 	static final String DIR_CONTENT="content/";
-	static final String VIEW_DESC="viewdesc";
-	static final String VIEW_SHARE="routshare";
-	static final String VIEW_NAV="navmap";
 	/**
 	 * @return
 	 */
@@ -70,6 +67,6 @@ public class HomeController {
 	 */
 	@RequestMapping({"/configMng"})
 	public String configMng(){
-		return DIR_CONTENT+"configMng";
+		return DIR_CONTENT+"configList";
 	}
 }

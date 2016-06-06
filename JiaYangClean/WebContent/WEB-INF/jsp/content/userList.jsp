@@ -53,7 +53,7 @@
 						<td item="address"></td>
 						<td item="userName"></td>
 						<td item="oprea" itemFiled="id">
-							<a href="javascript:;" class="btn btn-warning" onclick="win('用户修改','sys/userForm.do?id=')">修改</a>
+							<a href="javascript:;" class="btn btn-warning" onclick="autoWin('用户修改','sys/userForm.do?id=',400,600)">修改</a>
 							<a href="javascript:;" class="btn btn-danger"  onclick="deleteItem('sys/userDelete.do?id=')">删除</a> 
 						</td>
 					</tr>
