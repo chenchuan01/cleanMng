@@ -17,7 +17,7 @@
 					  </div>
 					  <div class="form-group">
 						<label class="sr-only" for="userId">用户</label>
-						<select class="form-control" id="userId">
+						<select class="form-control" id="userId" name="userId">
 							<option value="">查询用户</option>
 							<c:forEach items="${users }" var="user">
 								<option value="${user.id }">${user.name }</option>
@@ -25,9 +25,22 @@
 						</select>
 					  </div>
 					  <div class="form-group">
-						<label class="sr-only" for="planName">登录账户</label>
-						<input type="text" class="form-control" id="planName" name="planName" placeholder="登录账户">
-						<input type="hidden" name="roles" value="0"/>
+						<label class="sr-only" for="cleanerId">员工</label>
+						<select class="form-control" id="cleanerId" name="cleanerId">
+							<option value="">查询员工</option>
+							<c:forEach items="${emps }" var="emp">
+								<option value="${emp.id }">${emp.name }</option>
+							</c:forEach>
+						</select>
+					  </div>
+					  <div class="form-group">
+						<label class="sr-only" for="cleanerId">项目</label>
+						<select class="form-control" id="cleanerId" name="cleanerId">
+							<option value="">服务项目</option>
+							<c:forEach items="${items }" var="item">
+								<option value="${item.id }">${item.name }</option>
+							</c:forEach>
+						</select>
 					  </div>
 					  <div class="form-group">
 					  	<button type="button" class="btn btn-info" onclick="page(1)">查询</button>
@@ -43,23 +56,27 @@
 				<thead>
 					<tr>
 						<th>#</th>
-						<th>用户姓名</th>
-						<th>联系电话</th>
-						<th>居住地址</th>
-						<th>登录账户</th>
+						<th>预约编号</th>
+						<th>客户姓名</th>
+						<th>预约项目</th>
+						<th>预约时间</th>
+						<th>分配人员</th>
+						<th>需要工具</th>
+						<th>状态</th>
 						<th>操作</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr id="template">
 						<td item="index"></td>
-						<td item="name"></td>
-						<td item="tel"></td>
-						<td item="address"></td>
-						<td item="planName"></td>
-						<td item="oprea" itemFiled="id">
+						<td item="info.recon"></td>
+						<td item="user.name"></td>
+						<td item="item.name"></td>
+						<td item="info.time"></td>
+						<td item="info.time"></td>
+						<td item="oprea" itemFiled="info.id">
 							<a href="javascript:;" class="btn btn-warning" onclick="autoWin('用户修改','plan/planForm.do?id=',400,600)">修改</a>
-							<a href="javascript:;" class="btn btn-danger"  onclick="deleteItem('plan/planDelete.do?id=')">删除</a> 
+							<a href="javascript:;" class="btn btn-danger"  onclick="deleteItem('plan/planDelete.do?id=')">取消</a> 
 						</td>
 					</tr>
 				</tbody>

@@ -38,7 +38,11 @@ public class PlanController extends BaseController {
 	@Resource
 	ItemService itemService;
 	
-
+	@RequestMapping(value="planList")
+	public String planList(Model m){
+		genParams(m);
+		return "content/planList";
+	}
 	/**
 	 * 预约信息分页
 	 * 
@@ -67,11 +71,18 @@ public class PlanController extends BaseController {
 		if(id!=null){
 			Plan plan = planService.findById(id);
 			m.addAttribute("plan", plan);
-			m.addAttribute("users", userService.findAllEntity());
-			m.addAttribute("tools", toolService.findAllEntity());
-			m.addAttribute("items", itemService.findAllEntity());
+			genParams(m);
 		}
 		return "form/planForm";
+	}
+	private void genParams(Model m) {
+		User query = new User();
+		query.setRoles("0");
+		m.addAttribute("users", userService.find(query));
+		query.setRoles("1");
+		m.addAttribute("emps", userService.find(query));
+		m.addAttribute("tools", toolService.findAllEntity());
+		m.addAttribute("items", itemService.findAllEntity());
 	}
 	/**
 	 * 预约信息修改

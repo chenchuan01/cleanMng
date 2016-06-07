@@ -11,10 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 	static final String VIEW_HOME="home";
 	static final String DIR_CONTENT="content/";
-	/**
-	 * @return
-	 */
-	@RequestMapping({"","/nav"})
+	@RequestMapping("")
 	public String home(){
 		return VIEW_HOME;
 	}
@@ -37,7 +34,7 @@ public class HomeController {
 	 */
 	@RequestMapping({"/planMng"})
 	public String planMng(){
-		return DIR_CONTENT+"planList";
+		return "redirect:/plan/planList.do";
 	}
 	/**
 	 * @return
