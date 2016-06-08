@@ -58,12 +58,12 @@ public class SystemController extends BaseController {
 	 * @throws AppExpection
 	 */
 	@RequestMapping(value = {"userForm","newEmp"})
-	public String userForm(Integer id, Model m) {
+	public String userForm(Integer id,Integer initRole, Model m) {
 		if(id!=null){
 			User user = userService.findById(id);
 			m.addAttribute("user", user);
 		}
-		
+		m.addAttribute("initRole", initRole);
 		return FORM_SPACE+"userForm";
 	}
 	/**

@@ -44,7 +44,7 @@
 					  </div>
 					  <div class="form-group">
 					  	<button type="button" class="btn btn-info" onclick="page(1)">查询</button>
-					  	<!-- <button type="button" class="btn btn-success" onclick="autoWin('新增用户', 'plan/planForm.do',400,600)">新增用户</button> -->
+					  	<button type="button" class="btn btn-success" onclick="autoWin('保洁预约', 'plan/planForm.do',400,600)">保洁预约</button>
 					  </div>
 					</form>
 			<div class="divide-20"></div>

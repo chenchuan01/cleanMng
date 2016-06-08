@@ -32,7 +32,7 @@
 								  </div>
 								</form>
 								<div class="login-helpers">
-									还没有账号? <a href="javascript:;" onclick="swapScreen('register');return false;">注册走这边!</a>
+									还没有账号? <a href="javascript:;" onclick="swapScreen('register');return false;">保洁人员注册走这边!</a>
 								</div>
 							</div>
 						</div>
