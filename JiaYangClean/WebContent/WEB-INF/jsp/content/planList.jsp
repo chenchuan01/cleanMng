@@ -34,8 +34,8 @@
 						</select>
 					  </div>
 					  <div class="form-group">
-						<label class="sr-only" for="cleanerId">项目</label>
-						<select class="form-control" id="cleanerId" name="cleanerId">
+						<label class="sr-only" for="itemId">项目</label>
+						<select class="form-control" id="itemId" name="itemId">
 							<option value="">服务项目</option>
 							<c:forEach items="${items }" var="item">
 								<option value="${item.id }">${item.name }</option>
@@ -59,6 +59,7 @@
 						<th>预约编号</th>
 						<th>客户姓名</th>
 						<th>预约项目</th>
+						<th>服务费用</th>
 						<th>预约时间</th>
 						<th>分配人员</th>
 						<th>需要工具</th>
@@ -72,8 +73,9 @@
 						<td item="info.recon"></td>
 						<td item="user.name"></td>
 						<td item="item.name"></td>
+						<td item="item.price"></td>
 						<td item="info.time"></td>
-						<td item="info.time"></td>
+						<td item="info.tools"></td>
 						<td item="oprea" itemFiled="info.id">
 							<a href="javascript:;" class="btn btn-warning" onclick="autoWin('用户修改','plan/planForm.do?id=',400,600)">修改</a>
 							<a href="javascript:;" class="btn btn-danger"  onclick="deleteItem('plan/planDelete.do?id=')">取消</a> 

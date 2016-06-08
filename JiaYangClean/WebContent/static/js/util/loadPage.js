@@ -33,8 +33,8 @@ var cleanForm=function(){
 	});
 };
 var bootstrapInit=function(){
-	 /*$('[data-toggle="popover"]').popover();
-	 $('[data-toggle="tooltip"]').tooltip();*/
+	 $('[data-toggle="popover"]').popover();
+	 $('[data-toggle="tooltip"]').tooltip();
 	 $('#formModal').on('hidden.bs.modal', function (e) {
 		 $('#formModal'+' .modal-title').text("");
 		 $('#formModal'+' .modal-body').html("");
@@ -84,6 +84,7 @@ var pageFun=function(data){
 		loadPagesItem(data.totalPages);
 		setTotal(data.totalPages);
 		setPage(data.page);
+		bootstrapInit();
 	}else{
 		loadPagesItem(0);
 		setTotal(0);

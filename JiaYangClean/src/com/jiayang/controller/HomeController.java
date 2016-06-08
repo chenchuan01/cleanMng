@@ -1,7 +1,15 @@
 package com.jiayang.controller;
 
+import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.sys.common.util.SessionUtil;
+import com.sys.db.entity.User;
+import com.sys.db.service.UserService;
 
 /**
  *HomeController.java
@@ -11,9 +19,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 	static final String VIEW_HOME="home";
 	static final String DIR_CONTENT="content/";
+	@Resource
+	UserService userService;
 	@RequestMapping("")
 	public String home(){
 		return VIEW_HOME;
+	}
+	@RequestMapping("/myuserInfo.do")
+	public String myuserInfo(Model m,HttpSession session){
+		User sysUser = SessionUtil.sysUser(session);
+		m.addAttribute("user", userService.findById(sysUser.getId()));
+		return DIR_CONTENT+"myuserInfo";
+	}
+	@RequestMapping("/servView")
+	public String servView(){
+		return "redirect:item/servList.do";
+	}
+	@RequestMapping("/issueView")
+	public String issueView(){
+		return "redirect:plan/myissue.do";
 	}
 	/**
 	 * @return
@@ -41,7 +65,7 @@ public class HomeController {
 	 */
 	@RequestMapping({"/payMng"})
 	public String payMng(){
-		return DIR_CONTENT+"payList";
+		return "redirect:/plan/payList.do";
 	}
 
 	/**

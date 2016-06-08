@@ -38,10 +38,27 @@ public class PlanController extends BaseController {
 	@Resource
 	ItemService itemService;
 	
+	@RequestMapping(value="myissue")
+	public String myissue(Model m){
+		genParams(m);
+		return "content/myissue";
+	}
+	@RequestMapping(value="myplan")
+	public String myplan(Model m){
+		genParams(m);
+		return "content/myplan";
+	}
+	
+	
 	@RequestMapping(value="planList")
 	public String planList(Model m){
 		genParams(m);
 		return "content/planList";
+	}
+	@RequestMapping(value="payList")
+	public String payList(Model m){
+		genParams(m);
+		return "content/payList";
 	}
 	/**
 	 * 预约信息分页

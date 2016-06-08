@@ -64,13 +64,23 @@
 					<div class="sidebar-menu nav-collapse">
 						<!-- SIDEBAR MENU -->
 						<ul>
+							<c:if test="${'0' eq sysuser.roles }">
+							<li><a class="pageViewItem" onclick="pageView('${ctx}/item/servList.do');"><i class="fa fa-th-large"></i> <span class="menu-text">保洁服务</span></a></li>
+							<li><a class="pageViewItem" onclick="pageView('${ctx}/plan/myissue.do');"><i class="fa fa-th"></i><span class="menu-text">我的服务</span></a></li>
+							</c:if>
+							<c:if test="${'1' eq sysuser.roles }">
+							<li><a class="pageViewItem" onclick="pageView('${ctx}/plan/myissue.do');"><i class="fa fa-th"></i><span class="menu-text">我的服务</span></a></li>
+							<li><a class="pageViewItem" onclick="pageView('${ctx}/home/myuserInfo.do');"><i class="fa fa-user"></i> <span class="menu-text">个人信息</span></a></li>
+							</c:if>
+							<c:if test="${'2' eq sysuser.roles }">
 							<li><a class="pageViewItem" onclick="pageView('${ctx}/home/planMng.do');"><i class="fa fa-check-square-o"></i><span class="menu-text">预约管理</span></a></li>
-							<li><a class="pageViewItem" onclick="pageView('${ctx}/home/userMng.do');"><i class="fa fa-users"></i> <span class="menu-text">用户管理</span></a></li>
-							<li><a class="pageViewItem" onclick="pageView('${ctx}/home/empMng.do');"><i class="fa fa-sitemap"></i> <span class="menu-text">员工管理</span></a></li>
-							<li><a class="pageViewItem" onclick="pageView('${ctx}/home/toolMng.do');"><i class="fa fa-wrench"></i> <span class="menu-text">工具管理</span></a></li>
-							<li><a class="pageViewItem" onclick="pageView('${ctx}/home/itemMng.do');"><i class="fa fa-th-large"></i> <span class="menu-text">服务管理</span></a></li>
-							<li><a class="pageViewItem" onclick="pageView('${ctx}/home/payMng.do');"><i class="fa fa-jpy"></i><span class="menu-text">工资结算 </span></a></li>
+							<li><a class="pageViewItem" onclick="pageView('${ctx}/home/userMng.do');"><i class="fa fa-users"></i><span class="menu-text">用户管理</span></a></li>
+							<li><a class="pageViewItem" onclick="pageView('${ctx}/home/empMng.do');"><i class="fa fa-sitemap"></i><span class="menu-text">保洁人员</span></a></li>
+							<li><a class="pageViewItem" onclick="pageView('${ctx}/home/payMng.do');"><i class="fa fa-jpy"></i><span class="menu-text">&nbsp;工资结算 </span></a></li>
+							<li><a class="pageViewItem" onclick="pageView('${ctx}/home/toolMng.do');"><i class="fa fa-wrench"></i><span class="menu-text">工具管理</span></a></li>
+							<li><a class="pageViewItem" onclick="pageView('${ctx}/home/itemMng.do');"><i class="fa fa-th-large"></i><span class="menu-text">服务管理</span></a></li>
 							<li><a class="pageViewItem" onclick="pageView('${ctx}/home/configMng.do');"><i class="fa fa-gear"></i><span class="menu-text">系统配置 </span></a></li>
+							</c:if>
 						</ul>
 						<!-- /SIDEBAR MENU -->
 					</div>
@@ -98,11 +108,21 @@
 	<script type="text/javascript" src="${ctx }/static/js/tablecloth/js/jquery.tablecloth.js"></script>
 	<script type="text/javascript" src="${ctx }/static/js/tablecloth/js/jquery.tablesorter.min.js"></script>
 	<script>
+		var sysuser = {
+				'roles':'${sysuser.roles}',
+				'name':'${sysuser.name}',
+				'userName':'${sysuser.userName}'
+		};
 		jQuery(document).ready(function() {		
 			App.setPage("simple_table");  //Set current page
 			App.init(); //Initialise plugins and elements
-			
-			/* pageView('${ctx}/home/userMng.do');//Frist Page */
+			if(0==sysuser.roles){
+				 pageView('${ctx}/item/servList.do');
+			}else if(1==sysuser.roles){
+				pageView('${ctx}/plan/myissue.do');
+			}else if(2==sysuser.roles){
+				pageView('${ctx}/home/planMng.do');
+			}
 		});
 	</script>
 	<!-- /JAVASCRIPTS -->

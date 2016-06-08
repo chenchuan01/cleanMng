@@ -26,7 +26,11 @@ public class ItemController extends BaseController {
 	ItemService itemService;
 	
 	
-
+	@RequestMapping(value="servList")
+	public String servList(Model m){
+		m.addAttribute("items", itemService.findAllEntity());
+		return "content/servList";
+	}
 	/**
 	 * 服务项目信息分页
 	 * 
